@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct CryptoMetricsSwiftUIApp: App {
+    @State private var showLaunchScreen = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if showLaunchScreen {
+                LaunchScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            showLaunchScreen = false
+                        }
+                    }
+            } else {
+                HomeView()
+            }
         }
     }
 }
