@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LaunchScreenView: View {
     @State private var isLogoVisible = true
+    @State private var yOffset: CGFloat = -200
     
     var body: some View {
         ZStack {
@@ -18,17 +19,29 @@ struct LaunchScreenView: View {
                 .scaledToFit()
                 .frame(width: 206, height: 190)
                 .opacity(isLogoVisible ? 1 : 0)
-                .animation(.easeInOut(duration: 0.5))
+                .offset(y: yOffset)
             
             Image("logo")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 190, height: 190)
+                .offset(y: yOffset)
         }
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
         .onAppear {
+            let screenHeight = UIScreen.main.bounds.height
+            let screenWidth = UIScreen.main.bounds.width
+            let imageHeight = 190
+            let imageWidth = 190
+            let xOffset = (screenWidth - CGFloat(imageWidth)) / 2
+            let yOffset = (screenHeight - CGFloat(imageHeight)) / 2 - screenHeight / 2
+            
+            withAnimation(.easeInOut(duration: 0.5)) {
+                self.yOffset = yOffset
+            }
+            
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 withAnimation {
                     isLogoVisible.toggle()
@@ -37,6 +50,16 @@ struct LaunchScreenView: View {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
