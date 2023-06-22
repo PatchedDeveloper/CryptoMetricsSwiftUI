@@ -10,10 +10,13 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    
     var body: some View {
         VStack {
             VStack{
-                
+         Text("sdsd")
+                    
             }
             .frame(maxWidth: .infinity,maxHeight: .infinity)
             .background(Color("background"))

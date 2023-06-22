@@ -12,15 +12,19 @@
 		1D27FD382A44C874006C9359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D27FD372A44C874006C9359 /* Assets.xcassets */; };
 		1D27FD3B2A44C874006C9359 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D27FD3A2A44C874006C9359 /* Preview Assets.xcassets */; };
 		1D27FD442A44D1AF006C9359 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D27FD432A44D1AF006C9359 /* LaunchScreen.swift */; };
+		1D7FD4FB2A44DF5C00293F10 /* TapBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7FD4FA2A44DF5C00293F10 /* TapBarView.swift */; };
+		1D7FD4FE2A44E1B900293F10 /* TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7FD4FD2A44E1B900293F10 /* TokenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D27FD302A44C871006C9359 /* CryptoMetricsSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMetricsSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D27FD332A44C871006C9359 /* CryptoMetricsSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMetricsSwiftUIApp.swift; sourceTree = "<group>"; };
-		1D27FD352A44C871006C9359 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1D27FD352A44C871006C9359 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "../New Group/HomeView.swift"; sourceTree = "<group>"; };
 		1D27FD372A44C874006C9359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D27FD3A2A44C874006C9359 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D27FD432A44D1AF006C9359 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		1D7FD4FA2A44DF5C00293F10 /* TapBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarView.swift; sourceTree = "<group>"; };
+		1D7FD4FD2A44E1B900293F10 /* TokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +58,11 @@
 			isa = PBXGroup;
 			children = (
 				1D27FD332A44C871006C9359 /* CryptoMetricsSwiftUIApp.swift */,
-				1D27FD352A44C871006C9359 /* HomeView.swift */,
-				1D27FD372A44C874006C9359 /* Assets.xcassets */,
-				1D27FD392A44C874006C9359 /* Preview Content */,
 				1D27FD432A44D1AF006C9359 /* LaunchScreen.swift */,
+				1D27FD392A44C874006C9359 /* Preview Content */,
+				1D27FD372A44C874006C9359 /* Assets.xcassets */,
+				1D7FD4FC2A44DF6200293F10 /* Service */,
+				1D7FD4F92A44DE3400293F10 /* Screens */,
 			);
 			path = CryptoMetricsSwiftUI;
 			sourceTree = "<group>";
@@ -68,6 +73,23 @@
 				1D27FD3A2A44C874006C9359 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D7FD4F92A44DE3400293F10 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1D27FD352A44C871006C9359 /* HomeView.swift */,
+				1D7FD4FD2A44E1B900293F10 /* TokenView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1D7FD4FC2A44DF6200293F10 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1D7FD4FA2A44DF5C00293F10 /* TapBarView.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7FD4FB2A44DF5C00293F10 /* TapBarView.swift in Sources */,
 				1D27FD362A44C871006C9359 /* HomeView.swift in Sources */,
+				1D7FD4FE2A44E1B900293F10 /* TokenView.swift in Sources */,
 				1D27FD342A44C871006C9359 /* CryptoMetricsSwiftUIApp.swift in Sources */,
 				1D27FD442A44D1AF006C9359 /* LaunchScreen.swift in Sources */,
 			);

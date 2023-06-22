@@ -21,7 +21,7 @@ struct CryptoMetricsSwiftUIApp: App {
                         }
                     }
             } else {
-                HomeView()
+                TabBarView()
             }
         }
     }
