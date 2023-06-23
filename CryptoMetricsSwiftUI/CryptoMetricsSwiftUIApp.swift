@@ -20,6 +20,7 @@ struct CryptoMetricsSwiftUIApp: App {
                             showLaunchScreen = false
                         }
                     }
+                
             } else {
                 TabBarView()
             }

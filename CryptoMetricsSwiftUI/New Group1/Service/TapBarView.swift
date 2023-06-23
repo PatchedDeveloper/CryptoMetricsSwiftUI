@@ -22,7 +22,7 @@ struct TabBarView: View {
                 }
             ProfileView()
                 .tabItem {
-                    Image(systemName: "person.circle")
+                    Image(systemName: "person")
                     Text("Profile")
                 }
             OtherView()
@@ -43,5 +43,4 @@ struct TabBarView: View {
         }
     }
 }
-
 
