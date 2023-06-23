@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "25B68FA8-F9A0-40FB-AAC0-96BBB4245691"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1D20A13-AA62-4F5C-98E8-8C300451DF18"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoMetricsSwiftUI/LaunchController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "LaunchScreenViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E1D20A13-AA62-4F5C-98E8-8C300451DF18 - cf594fc471333d7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CryptoMetricsSwiftUI.ViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CryptoMetricsSwiftUI.ViewController"
+                  moduleName = "CryptoMetricsSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danilakardashevkii/Developer/CryptoMetricsSwiftUI/CryptoMetricsSwiftUI/LaunchController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "E1D20A13-AA62-4F5C-98E8-8C300451DF18 - bee5f80058ed9174"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CryptoMetricsSwiftUI.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CryptoMetricsSwiftUI.ViewController"
+                  moduleName = "CryptoMetricsSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danilakardashevkii/Developer/CryptoMetricsSwiftUI/CryptoMetricsSwiftUI/LaunchController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "117">
+               </Location>
+               <Location
+                  uuid = "E1D20A13-AA62-4F5C-98E8-8C300451DF18 - 8c440387ffea8c80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CryptoMetricsSwiftUI.ViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CryptoMetricsSwiftUI.ViewController&gt;"
+                  moduleName = "CryptoMetricsSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danilakardashevkii/Developer/CryptoMetricsSwiftUI/CryptoMetricsSwiftUI/LaunchController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "E1D20A13-AA62-4F5C-98E8-8C300451DF18 - 1b74ec803773383d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CryptoMetricsSwiftUI.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CryptoMetricsSwiftUI.ViewController&gt;"
+                  moduleName = "CryptoMetricsSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danilakardashevkii/Developer/CryptoMetricsSwiftUI/CryptoMetricsSwiftUI/LaunchController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "74">
+               </Location>
+               <Location
+                  uuid = "E1D20A13-AA62-4F5C-98E8-8C300451DF18 - a75519a72d8f461e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CryptoMetricsSwiftUI.ViewController.__deallocating_deinit"
+                  moduleName = "CryptoMetricsSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danilakardashevkii/Developer/CryptoMetricsSwiftUI/CryptoMetricsSwiftUI/LaunchController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
