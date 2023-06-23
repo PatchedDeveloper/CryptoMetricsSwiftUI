@@ -18,6 +18,12 @@ struct TokenView: View {
                     .fontWeight(.bold)
                     .font(.system(size: 20))
             }
+            Button {
+                print(coinData)
+            } label: {
+                Text("Click ")
+            }
+
             //window search
             SearchView()
             // ListView with cells

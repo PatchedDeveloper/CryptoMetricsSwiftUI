@@ -13,7 +13,7 @@ class APIManager {
     let baseUrl = "https://api.coingecko.com/api/v3/coins/markets?"
     let params = "vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h"
     
-    var urlString: String { return "\(baseUrl)\(params)" }
+    var urlString: String {return "\(baseUrl)\(params)"}
     
     func getData(completion: @escaping ([CoinDatum]) -> Void) {
         let url = URL(string: urlString)!
@@ -42,7 +42,9 @@ class APIManager {
         
         task.resume()
     }
+    
 }
+
 
 
 

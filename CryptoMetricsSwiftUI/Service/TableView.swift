@@ -9,28 +9,23 @@ import SwiftUI
 
 struct TableView: View {
     @State private var coinData: [CoinDatum] = []
-    @State private var timer: Timer?
-    
-    init() {
-         loadCoinData() // Load saved data from memory
-     }
-    
+
     var body: some View {
-        HStack{
+        HStack {
             Text("Name")
                 .foregroundColor(Color("TextSecondColor"))
             Spacer()
             Text("Price/Chg. 24h")
                 .foregroundColor(Color("TextSecondColor"))
         }
-        .padding(.top,5)
-        .padding(.horizontal,10)
+        .padding(.top, 5)
+        .padding(.horizontal, 10)
         
         HStack {
             if coinData.isEmpty {
-                VStack{
+                VStack {
                     ProgressView()
-                        
+                    
                     Text("Please wait loading...")
                         .foregroundColor(.white)
                         .padding()
@@ -49,15 +44,20 @@ struct TableView: View {
                         }
                         .scaledToFit()
                         .cornerRadius(10)
-
-                        VStack{
+                        
+                        HStack {
                             Text(coin.name)
+                                .foregroundColor(.white)
+                            Text(coin.symbol )
+                                .foregroundColor(.white)
+                            Spacer()
+                            Text(String(coin.currentPrice))
                                 .foregroundColor(.white)
                         }
                         Spacer()
-                            
+                        
                     }
-                    .padding()// Растягиваем ячейку на всю ширину
+                    .padding() // Растягиваем ячейку на всю ширину
                     .background(Color("SecondColor"))
                     .listRowInsets(EdgeInsets()) // Убираем отступы ячейки
                 }
@@ -69,59 +69,19 @@ struct TableView: View {
         .cornerRadius(10)
         .padding(.bottom, 5)
         .onAppear {
-            fetchData()// load data
-            startTimer()// reload data 60sec
+            fetchData() // load data
         }
-        .onDisappear {
-              stopTimer()//stop reloading data
-        }
-
-        }
+    }
+    
     func fetchData() {
-        if let savedData = UserDefaults.standard.data(forKey: "coinData") {
-            if let decodedData = try? JSONDecoder().decode([CoinDatum].self, from: savedData) {
-                DispatchQueue.main.async {
-                    self.coinData = decodedData
-                    print("Loaded data from memory")
-                }
-            }
-        } else {
-            APIManager.shared.getData { coinData in
-                DispatchQueue.main.async {
-                    self.coinData = coinData
-                    saveCoinData()
-                    print("Fetched data from API")
-                }
+        APIManager.shared.getData { coinData in
+            DispatchQueue.main.async {
+                self.coinData = coinData
+                print("Fetched data from API")
             }
         }
     }
-      
-      // Function to save coinData in UserDefaults
-      func saveCoinData() {
-          let data = try? JSONEncoder().encode(coinData)
-          UserDefaults.standard.set(data, forKey: "coinData")
-      }
-      
-      // Function to load coinData from UserDefaults
-      func loadCoinData() {
-          guard let data = UserDefaults.standard.data(forKey: "coinData") else {
-              return
-          }
-          coinData = try! JSONDecoder().decode([CoinDatum].self, from: data)
-      }
-    func startTimer() {
-          timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
-          fetchData()
-          print("data reloaded")
-        }
-    }
-
-    func stopTimer() {
-        timer?.invalidate()
-        timer = nil
-        }
-    }
-
+}
 
 
 
