@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TableView: View {
     @State private var coinData: [CoinDatum] = []
-
+    @State private var timer: Timer?
+    
     var body: some View {
         HStack {
             Text("Name")
@@ -48,7 +49,7 @@ struct TableView: View {
                         HStack {
                             Text(coin.name)
                                 .foregroundColor(.white)
-                            Text(coin.symbol )
+                            Text(coin.symbol ?? "")
                                 .foregroundColor(.white)
                             Spacer()
                             Text(String(coin.currentPrice))
@@ -70,6 +71,10 @@ struct TableView: View {
         .padding(.bottom, 5)
         .onAppear {
             fetchData() // load data
+            startTimer() // start timer for refreshing data
+        }
+        .onDisappear {
+            stopTimer() // stop timer
         }
     }
     
@@ -78,8 +83,31 @@ struct TableView: View {
             DispatchQueue.main.async {
                 self.coinData = coinData
                 print("Fetched data from API")
+                saveCoinData() // Save data to memory
             }
         }
+    }
+    
+    func saveCoinData() {
+        do {
+            let data = try JSONEncoder().encode(coinData)
+            UserDefaults.standard.set(data, forKey: "coinData")
+            print("Saved data to memory")
+        } catch {
+            print("Error saving coinData: \(error)")
+        }
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+            fetchData()
+            print("Data reloaded")
+        }
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
 }
 
