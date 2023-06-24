@@ -15,7 +15,7 @@ struct TableView: View {
         }
         .padding(.top, 5)
         .padding(.horizontal, 10)
-        
+
         HStack {
             if coinData.isEmpty {
                 VStack {
@@ -38,7 +38,7 @@ struct TableView: View {
                             } placeholder: {
                                 // Placeholder image while loading
                                 Color.gray
-                                    .frame(width: 20, height: 20)
+                                    .frame(width: 40, height: 40)
                             }
                             .scaledToFit()
                             .cornerRadius(10)
@@ -48,7 +48,7 @@ struct TableView: View {
                                     Text(coin.name)
                                         .foregroundColor(.white)
                                     Spacer()
-                                    Text(String(coin.currentPrice))
+                                    Text("$"+formatNumber(Double(coin.currentPrice)))
                                         .foregroundColor(.white)
                                 }
                                 .padding(.bottom, -5)

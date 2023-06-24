@@ -18,8 +18,8 @@ struct GraphView: View {
     var ColorGraph = ""
 
 
-    init(price: [Double]){
-        data = price // Используйте свойство `price` вместо `coin. ?? []`
+    init(price: [[TimeInterval: Double]]){
+        data = price.flatMap { $0.values }
         maxY = data.max() ?? 0
         minY = data.min() ?? 0
         yfirst = data.first ?? 0
@@ -43,12 +43,12 @@ struct GraphView: View {
                           CurveChart(data: data, isBackground: true)
                             .fill(.linearGradient(colors: [Color(ColorGraph).opacity(0.4), .clear], startPoint: .top, endPoint: .bottom)) // background fill
                           )
-                      .frame(width: 89,height: 30)
+                      .frame(width: 374,height: 186)
                       
 
 
         }
-        .frame(width: 89,height: 43)
+        .frame(width: 374,height: 186)
     }
 }
 

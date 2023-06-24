@@ -18,11 +18,6 @@ struct TokenView: View {
                     .fontWeight(.bold)
                     .font(.system(size: 20))
             }
-            Button {
-                print(coinData)
-            } label: {
-                Text("Click ")
-            }
 
             //window search
             SearchView()
@@ -36,8 +31,8 @@ struct TokenView: View {
   }
 }
 
-struct TokenView_Previews: PreviewProvider {
-    static var previews: some View {
-        TokenView()
-    }
-}
+//struct TokenView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TokenView()
+//    }
+//}
