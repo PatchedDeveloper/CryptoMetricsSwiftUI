@@ -10,7 +10,7 @@ import Foundation
 typealias CoinData = [CoinDatum]
 
 // MARK: - CoinDatum
-struct CoinDatum: Codable {
+struct CoinDatum: Identifiable,Codable {
     let id, name: String
     let symbol: String
     let image: String

@@ -1,15 +1,9 @@
-//
-//  TableView.swift
-//  CryptoMetricsSwiftUI
-//
-//  Created by Danila Kardashevkii on 23.06.2023.
-//
-
 import SwiftUI
 
 struct TableView: View {
     @State private var coinData: [CoinDatum] = []
     @State private var timer: Timer?
+    @State private var selectedCoin: CoinDatum?
     
     var body: some View {
         HStack {
@@ -31,39 +25,68 @@ struct TableView: View {
                         .foregroundColor(.white)
                         .padding()
                 }
-            } else {
+            }  else {
                 List(coinData, id: \.id) { coin in
-                    HStack {
-                        AsyncImage(url: URL(string: coin.image)) { image in
-                            image
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                        } placeholder: {
-                            // Placeholder image while loading
-                            Color.gray
-                                .frame(width: 20, height: 20)
-                        }
-                        .scaledToFit()
-                        .cornerRadius(10)
-                        
+                    Button(action: {
+                        selectedCoin = coin
+                    }, label: {
                         HStack {
-                            Text(coin.name)
-                                .foregroundColor(.white)
-                            Text(coin.symbol ?? "")
-                                .foregroundColor(.white)
-                            Spacer()
-                            Text(String(coin.currentPrice))
-                                .foregroundColor(.white)
+                            AsyncImage(url: URL(string: coin.image)) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                            } placeholder: {
+                                // Placeholder image while loading
+                                Color.gray
+                                    .frame(width: 20, height: 20)
+                            }
+                            .scaledToFit()
+                            .cornerRadius(10)
+                            
+                            VStack {
+                                HStack {
+                                    Text(coin.name)
+                                        .foregroundColor(.white)
+                                    Spacer()
+                                    Text(String(coin.currentPrice))
+                                        .foregroundColor(.white)
+                                }
+                                .padding(.bottom, -5)
+                                .padding(.top, 5)
+                                HStack {
+                                    Text(coin.symbol)
+                                        .foregroundColor(.gray)
+                                        .font(.system(size: 12))
+                                    Spacer()
+                                    ZStack {
+                                        let colorprocent = coin.priceChangePercentage24H
+                                        if colorprocent ?? 0 > 0 {
+                                            HStack {
+                                            }
+                                            .frame(width: 40, height: 15)
+                                            .background(Color("colorP"))
+                                            .cornerRadius(10)
+                                        } else {
+                                            HStack {
+                                            }
+                                            .frame(width: 40, height: 15)
+                                            .background(Color("colorM"))
+                                            .cornerRadius(10)
+                                        }
+                                        ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
+                                    }
+                                }
+                            }
                         }
-                        Spacer()
-                        
-                    }
-                    .padding() // Растягиваем ячейку на всю ширину
-                    .background(Color("SecondColor"))
-                    .listRowInsets(EdgeInsets()) // Убираем отступы ячейки
+                        .contentShape(Rectangle()) // Устанавливаем область нажатия на всю ячейку
+                    })
+                    .buttonStyle(PlainButtonStyle()) // Убираем стиль кнопки
+                    .frame(maxWidth: .infinity)
+                    .listRowBackground(Color("SecondColor")) // Закрашиваем фон ячейки
                 }
-                .listStyle(.plain) //
+                .listStyle(.plain)
             }
+
         }
         .frame(maxWidth: .infinity, maxHeight: 600)
         .background(Color("SecondColor"))
@@ -76,7 +99,12 @@ struct TableView: View {
         .onDisappear {
             stopTimer() // stop timer
         }
+        .fullScreenCover(item: $selectedCoin) { coin in
+            CoinDetailView(coin: coin)
+                .edgesIgnoringSafeArea(.all) // Make the detail view ignore safe area
+        }
     }
+    
     
     func fetchData() {
         APIManager.shared.getData { coinData in
@@ -112,23 +140,22 @@ struct TableView: View {
 }
 
 
-
 struct SearchView: View {
     @State private var name: String = ""
+    
     var body: some View {
         HStack{
             Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                        .padding(.leading, 18)
+                .foregroundColor(.gray)
+                .padding(.leading, 18)
+            
             TextField("Search by Name or Symbol...", text: $name)
                 .foregroundColor(.white)
                 .padding(.vertical)
-                
         }
         .background(Color("SecondColor"))
         .cornerRadius(20)
         .padding(.vertical,5)
         .padding(.horizontal,1)
     }
-    }
-
+}
