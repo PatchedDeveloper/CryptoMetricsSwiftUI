@@ -19,13 +19,15 @@ ___
 
 -There is a schedule of price changes for 7 days 📈
 ___
-## Screen Tokens_________________________________ Screen CoinDetailView
+## Screen Tokens
 <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/7dc6c5d4-3735-4032-b09c-47abda306ee4" alt="IMG_0969" width="250" height="550" />
-__________________________________________  
+
+___
+## Screen CoinDetailView
 <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/831f0405-33bd-4924-abbe-a5b64d0505d4" alt="IMG_0970" width="250" height="550" />
 
 ___
-### Also, a multifunctional profile is being actively developed at the moment, at this stage authorization looks like this
+## Screen Authorization
 <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/9f35a7c8-d10f-47cc-b49a-000714f1b5ac" alt="IMG_0971" width="250" height="550" />
 
 ### ***You can see the rest by downloading the repository***
