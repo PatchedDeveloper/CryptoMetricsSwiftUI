@@ -25,7 +25,7 @@ CryptoMetrics is a useful tool for cryptocurrency investors, traders, and anyone
 
 ---
 ## Stack
-:two_hearts: `SwiftUI`
+:two_hearts: `SwiftUI` :two_hearts: `CustomCharts`
 
 ---
 <div align="center">
