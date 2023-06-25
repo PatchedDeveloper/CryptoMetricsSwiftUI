@@ -24,26 +24,15 @@ The app's status is `Pre-Alpha`
 CryptoMetrics представляет собой полезный инструмент для криптоинвесторов, трейдеров и всех, кто интересуется криптовалютами.
 
 ---
-
 ## Stack
 :two_hearts: `SwiftUI`
 
 ---
-
-## Screen Tokens
-
-<img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/7dc6c5d4-3735-4032-b09c-47abda306ee4" alt="IMG_0969" width="250" height="550" />
-
----
-
-## Screen CoinDetailView
-
-<img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/831f0405-33bd-4924-abbe-a5b64d0505d4" alt="IMG_0970" width="250" height="550" />
-
----
-
-## Screen Authorization
-
-<img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/9f35a7c8-d10f-47cc-b49a-000714f1b5ac" alt="IMG_0971" width="250" height="550" />
+<div align="center">
+    <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/be039ad2-4b7c-4c46-b41e-f090a7fbde0c" width="200" alt="Image 1" />
+    <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/d6ca585d-9afe-4633-b5cb-ae75bad44195" width="200" alt="Image 2" />
+    <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/03a6b07a-edfc-45a4-b97b-ac717ad3b6a3" width="200" alt="Image 3" />
+    <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/04f468e6-d5df-445b-9e0a-7eb0d36b3752" width="200" alt="Image 4" />
+</div>
 
 ### You can see the rest by downloading the repository
