@@ -78,6 +78,7 @@ struct CoinDetailView: View {
                                 Text("$"+formatNumber(Double(coin.currentPrice)))
                                     .foregroundColor(.white)
                                     .padding(.leading,-5)
+                                    .padding(.trailing,10)
                                     .fontWeight(.bold)
                             }
                             
@@ -106,9 +107,22 @@ struct CoinDetailView: View {
                                     .cornerRadius(10)
                                 }
                                 ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
+                         
                             }
-                           
-                            
+                            let colorchange = coin.price_change_24h
+                            if colorchange ?? 0 > 0 {
+                                Text("+$" + String(coin.price_change_24h ?? 0))
+                                    .foregroundColor(.green)
+                                    .padding(.leading,-5)
+                                    .font(.custom("SFProText-Light", size: 12))
+                              
+                            } else {
+                                Text("$" + String(coin.price_change_24h ?? 0))
+                                    .foregroundColor(.red)
+                                    .padding(.leading,-5)
+                                    .font(.custom("SFProText-Light", size: 12))
+                            }
+
                         }
                         .padding(.top, -5)
                     }
