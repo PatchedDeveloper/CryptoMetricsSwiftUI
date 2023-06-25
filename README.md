@@ -7,43 +7,38 @@
 
 The app's status is `Pre-Alpha`
 
-**CryptoMetrics** - это приложение, разработанное для отслеживания и мониторинга криптовалют и их рыночных данных. Оно предоставляет пользователям возможность получать актуальную информацию о различных криптовалютах, включая их текущую цену, рыночную капитализацию, объем торгов и изменения цен за определенный период времени.
+**CryptoMetrics** is an application designed for tracking and monitoring cryptocurrencies and their market data. It provides users with real-time information about various cryptocurrencies, including their current price, market capitalization, trading volume, and price changes over a specific period of time.
 
-Основные особенности CryptoMetrics:
+Key features of CryptoMetrics:
 
-1. **Отслеживание криптовалют:** Пользователи могут выбрать и отслеживать различные криптовалюты на основе своих предпочтений. CryptoMetrics предоставляет подробную информацию о каждой криптовалюте, включая ее имя, символ, текущую цену и процентное изменение за последние 24 часа.
+1. **Cryptocurrency Tracking:** Users can select and track different cryptocurrencies based on their preferences. CryptoMetrics provides detailed information about each cryptocurrency, including its name, symbol, current price, and percentage change in the last 24 hours.
 
-2. **Портфель и отслеживание активов:** Пользователи могут создавать собственные портфели криптовалют, добавлять интересующие их активы и отслеживать их стоимость и изменения в реальном времени. Это позволяет пользователям следить за своими инвестициями и контролировать их прибыльность.
+2. **Portfolio and Asset Tracking:** Users can create their own cryptocurrency portfolios, add their desired assets, and track their real-time value and changes. This allows users to monitor their investments and track their profitability.
 
-3. **Графики и аналитика:** CryptoMetrics предоставляет графическое представление ценовых данных и изменений криптовалюты на различных временных интервалах. Пользователи могут анализировать графики и использовать инструменты технического анализа для принятия информированных решений по торговле или инвестированию.
+3. **Charts and Analytics:** CryptoMetrics provides graphical representations of price data and cryptocurrency changes over various time intervals. Users can analyze charts and utilize technical analysis tools to make informed trading or investment decisions.
 
-4. **Уведомления и настраиваемые оповещения:** Приложение предлагает настраиваемые уведомления и оповещения, чтобы пользователи могли получать актуальную информацию о значительных изменениях цен, объемах торгов или других ключевых параметрах своих отслеживаемых криптовалют.
+4. **Notifications and Custom Alerts:** The app offers customizable notifications and alerts, allowing users to stay updated on significant price changes, trading volumes, or other key parameters of their tracked cryptocurrencies.
 
-5. **Новости и статьи:** CryptoMetrics также предоставляет сводки новостей и информацию о последних разработках в мире криптовалют и блокчейна. Пользователи могут быть в курсе последних событий и трендов, чтобы оставаться информированными и принимать осознанные решения.
+5. **News and Articles:** CryptoMetrics also provides news summaries and information about the latest developments in the world of cryptocurrencies and blockchain. Users can stay informed about recent events and trends to make informed decisions.
 
-CryptoMetrics представляет собой полезный инструмент для криптоинвесторов, трейдеров и всех, кто интересуется криптовалютами.
+CryptoMetrics is a useful tool for cryptocurrency investors, traders, and anyone interested in cryptocurrencies.
 
 ---
-
 ## Stack
-:two_hearts: `SwiftUI`
+:two_hearts: `SwiftUI` :two_hearts: `CustomCharts`
 
 ---
+<div align="center">
+    <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/be039ad2-4b7c-4c46-b41e-f090a7fbde0c" width="200" alt="Image 1" />
+    <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/d6ca585d-9afe-4633-b5cb-ae75bad44195" width="200" alt="Image 2" />
+    <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/03a6b07a-edfc-45a4-b97b-ac717ad3b6a3" width="200" alt="Image 3" />
+    <img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/04f468e6-d5df-445b-9e0a-7eb0d36b3752" width="200" alt="Image 4" />
+</div>
 
-## Screen Tokens
 
-<img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/7dc6c5d4-3735-4032-b09c-47abda306ee4" alt="IMG_0969" width="250" height="550" />
 
----
+- CryptoMetrics is currently in the pre-alpha stage of development.
 
-## Screen CoinDetailView
+- To see the complete documentation and download the repository, please visit the [CryptoMetrics GitHub repository](https://github.com/PatchedDeveloper/CryptoMetrics).
 
-<img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/831f0405-33bd-4924-abbe-a5b64d0505d4" alt="IMG_0970" width="250" height="550" />
 
----
-
-## Screen Authorization
-
-<img src="https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/9f35a7c8-d10f-47cc-b49a-000714f1b5ac" alt="IMG_0971" width="250" height="550" />
-
-### You can see the rest by downloading the repository
