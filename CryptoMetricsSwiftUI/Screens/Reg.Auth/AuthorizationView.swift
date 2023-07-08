@@ -19,6 +19,7 @@ struct AuthView: View {
     @State private var alertMessage = ""
     @State private var isTabBar = false
     @State private var isAuthenticated = false
+    @State private var isPasswordVisible = false
     
     var body: some View {
         VStack {
@@ -60,24 +61,40 @@ struct AuthView: View {
                 }
                 .cornerRadius(20)
                 .padding(.vertical,30)
-                .padding(.horizontal,1)
+                .padding(.horizontal,15)
                 //TEXTFIEL PASSWORD
                 HStack{
                     Image(systemName: "lock.shield")
                                 .foregroundColor(.white)
                                 .padding(.leading, 10)
            
-                    TextField("PASSWORD", text: $password)
-                        .foregroundColor(.white) // Color of the entered text
-                        .underline()
-                        .accentColor(.white) // Color of the placeholder text
-                        .colorScheme(.dark)
-                    
-     
+                    HStack {
+                                 if isPasswordVisible {
+                                     TextField("PASSWORD", text: $password)
+                                         .foregroundColor(.white)
+                                         .underline()
+                                         .accentColor(.white)
+                                         .colorScheme(.dark)
+                                 } else {
+                                     SecureField("PASSWORD", text: $password)
+                                         .foregroundColor(.white)
+                                         .underline()
+                                         .accentColor(.white)
+                                         .colorScheme(.dark)
+                                 }
+                                 
+                                 Button(action: {
+                                     isPasswordVisible.toggle()
+                                 }) {
+                                     Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
+                                         .foregroundColor(.white)
+                                 }
+                             }
                 }
                 .cornerRadius(20)
                 .padding(.vertical,30)
-                .padding(.horizontal,1)
+                .padding(.horizontal,15)
+                
                 
             }
             .padding(.top,15)
