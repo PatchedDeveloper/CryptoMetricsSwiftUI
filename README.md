@@ -2,9 +2,6 @@
 
 # CryptoMetrics by PatchedDev
 
-![Build Status](https://github.com/PatchedDeveloper/CryptoMetrics/assets/103842703/5e7b93c1-ef85-42c0-95ea-3b86855a2460)
-![alt tag](https://github.com/PatchedDeveloper/CryptoMetrics/assets/103842703/8d7e95a4-ef4a-40a2-b67e-74142e892c4e)
-
 The app's status is `Pre-Alpha`
 
 **CryptoMetrics** is an application designed for tracking and monitoring cryptocurrencies and their market data. It provides users with real-time information about various cryptocurrencies, including their current price, market capitalization, trading volume, and price changes over a specific period of time.
