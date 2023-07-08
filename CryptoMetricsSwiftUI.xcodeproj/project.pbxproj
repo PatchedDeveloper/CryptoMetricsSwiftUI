@@ -113,11 +113,11 @@
 		1D27FD322A44C871006C9359 /* CryptoMetricsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1D27FD372A44C874006C9359 /* Assets.xcassets */,
 				1DDC81402A59EBF300AEA3BB /* Info.plist */,
 				1D27FD332A44C871006C9359 /* CryptoMetricsSwiftUIApp.swift */,
 				1D27FD432A44D1AF006C9359 /* LaunchScreen.swift */,
 				1D27FD392A44C874006C9359 /* Preview Content */,
-				1D27FD372A44C874006C9359 /* Assets.xcassets */,
 				1DCFEA472A458FBD0044CAD4 /* ApiControllers */,
 				1D7FD5062A44F17000293F10 /* Service */,
 				1D7FD4F92A44DE3400293F10 /* Screens */,
@@ -154,10 +154,10 @@
 		1D7FD4F92A44DE3400293F10 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1D0E36082A47924100CB80FE /* Reg.Auth */,
 				1D27FD352A44C871006C9359 /* HomeView.swift */,
 				1D7FD4FD2A44E1B900293F10 /* TokenView.swift */,
 				1D7FD4FF2A44EC3600293F10 /* ProfileView.swift */,
-				1D0E36082A47924100CB80FE /* Reg.Auth */,
 				1D7FD5012A44EC4C00293F10 /* OtherView.swift */,
 				1D351A802A46AF2B005832E3 /* CoinDetailView.swift */,
 				1DDC81292A59E98500AEA3BB /* GoogleService-Info.plist */,

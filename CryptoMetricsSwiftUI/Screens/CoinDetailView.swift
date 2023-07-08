@@ -111,13 +111,14 @@ struct CoinDetailView: View {
                             }
                             let colorchange = coin.price_change_24h
                             if colorchange ?? 0 > 0 {
-                                Text("+$" + String(coin.price_change_24h ?? 0))
+                                Text("+$" + String(format: "%.2f", coin.price_change_24h ?? 0))
+
                                     .foregroundColor(.green)
                                     .padding(.leading,-5)
                                     .font(.custom("SFProText-Light", size: 12))
                               
                             } else {
-                                Text("$" + String(coin.price_change_24h ?? 0))
+                                Text("+$" + String(format: "%.2f", coin.price_change_24h ?? 0))
                                     .foregroundColor(.red)
                                     .padding(.leading,-5)
                                     .font(.custom("SFProText-Light", size: 12))
@@ -290,127 +291,186 @@ struct CoinDetailView: View {
                 .padding(.top,10)
                 .padding(.horizontal)
                 
-                HStack{
-                    VStack{
-                        Text("24h High")
-                        .foregroundColor(.gray)
-                        
-                        Text("$"+formatNumber(Double(coin.high_24h ?? 0)))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                    }
-                    Spacer()
-                    VStack{
-                        Text("24h Low")
-                        .foregroundColor(.gray)
-                        
-                        Text("$"+formatNumber(Double(coin.low_24h ?? 0)))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                    }
-                }
-                .padding(.top,10)
-                .padding(.horizontal)
+                Text("Additional Details")
+                    .foregroundColor(.white)
+                    .font(.system(size: 20, weight: .bold))
+                    .padding(.top, 10)
                 
-                HStack{
-                    VStack{
-                        Text("24h Price Change")
-                        .foregroundColor(.gray)
-                        
-                        Text("$"+formatNumber(Double(coin.high_24h ?? 0)))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                        HStack{
-                            if coin.priceChangePercentage24H ?? 0 > 0{
-                                ZStack{
-                                    Image("aup")
-                                        .padding(.leading,-30)
-                                    ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
-                            
-                                }
-                            }
-                            else if coin.priceChangePercentage24H ?? 0 <= 0{
-                                ZStack{
-                                    Image("adw")
-                                        .padding(.leading,-30)
-                                    ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
-                                        
-                                }
-                        }
-                        }
-                        .padding(.top,-10)
-                    }
-                    Spacer()
-                    VStack{
-                        Text("24h MarketCup Change")
-                        .foregroundColor(.gray)
-                        
-                        Text("$"+formatNumber(Double(coin.low_24h ?? 0)))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                        HStack{
-                            if coin.market_cap_change_percentage_24h ?? 0 > 0{
-                                ZStack{
-                                    Image("aup")
-                                        .padding(.leading,-30)
-                                    ProcentPrice(procent: coin.market_cap_change_percentage_24h ?? 0)
-                            
-                                }
-                            }
-                            else if coin.market_cap_change_percentage_24h ?? 0 <= 0{
-                                ZStack{
-                                    Image("adw")
-                                        .padding(.leading,-30)
-                                    ProcentPrice(procent: coin.market_cap_change_percentage_24h ?? 0)
-                                        
-                                }
-                        }
-                             
-                        }
-                        .padding(.top,-10)
-                    }
-                }
-                .padding(.top,10)
-                .padding(.horizontal)
                 
-                HStack{
-                    VStack{
-                        Text("Total Supply")
-                            .foregroundColor(.gray)
-                        
-                        Text(formatNumber(Double(coin.total_supply ?? 0)))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
+                
+                
+                ScrollView(showsIndicators: false){
+                    
+                    HStack{
+                        // 1 colimn
+                        HStack{
+                            VStack{
+                                Text("24h High")
+                                .foregroundColor(.gray)
+                                
+                                Text("$"+formatNumber(Double(coin.high_24h ?? 0)))
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 14))
+                            }
+                           Spacer()
+                            VStack{
+                                Text("24h Low")
+                                .foregroundColor(.gray)
+                                
+                                Text("$"+formatNumber(Double(coin.low_24h ?? 0)))
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 14))
+                            }
+                        }
+                        .padding(.top,5)
+                        .padding(.bottom,5)
+                        .padding(.horizontal,50)
+                    }
+                    .background(Color("SecondColor"))
+                    .cornerRadius(5)
+                    .padding(.horizontal,10)
+                  
+                    //2 column
+                    HStack{
+                        HStack{
+                            VStack{
+                                Text("24h Price Change")
+                                .foregroundColor(.gray)
+                                
+                                HStack{
+                                    Text("$"+formatNumber(Double(coin.high_24h ?? 0)))
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 14))
+                                    HStack{
+                                        if coin.priceChangePercentage24H ?? 0 > 0{
+                                            HStack{
+                                                Image("aup")
+                                                 
+                                                ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
+                                                    .padding(.leading,-5)
+                                            }
+                                        }
+                                        else if coin.priceChangePercentage24H ?? 0 <= 0{
+                                            HStack{
+                                                Image("adw")
+                                               
+                                                ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
+                                                    .padding(.leading,-5)
+                                            }
+                                    }
+                                    }
+                                }
+                                .padding(.top,-10)
+                            }
+                            Spacer()
+                            VStack{
+                                Text("24h MarketCup Change")
+                                .foregroundColor(.gray)
+                                
+                                HStack{
+                                    Text("$"+formatNumber(Double(coin.low_24h ?? 0)))
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 14))
+                                    HStack{
+                                        if coin.market_cap_change_percentage_24h ?? 0 > 0{
+                                            HStack{
+                                                Image("aup")
+                                          
+                                                ProcentPrice(procent: coin.market_cap_change_percentage_24h ?? 0)
+                                                    .padding(.leading,-5)
+                                        
+                                            }
+                                        }
+                                        else if coin.market_cap_change_percentage_24h ?? 0 <= 0{
+                                            HStack{
+                                                Image("adw")
+                                                 
+                                                ProcentPrice(procent: coin.market_cap_change_percentage_24h ?? 0)
+                                                    .padding(.leading,-5)
+                                            }
+                                    }
+                                         
+                                    }
+                                }
+                                .padding(.top,-10)
+                           
+                            }
+                        }
+                        .padding(.top,5)
+                        .padding(.bottom,5)
+                        .padding(.horizontal)
+                    }
+                    .background(Color("SecondColor"))
+                    .cornerRadius(5)
+                    .padding(.horizontal,10)
+                    
+                    //3 column
+                    HStack{
+                        HStack{
+                            VStack{
+                                Text("Total Supply")
+                                    .foregroundColor(.gray)
+                                
+                                Text(formatNumber(Double(coin.total_supply ?? 0)))
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 14))
+                                
+                            }
+                            Spacer()
+                            VStack{
+                                Text("Max Supply")
+                                    .foregroundColor(.gray)
+                                if coin.max_supply ?? 0 > 0 {
+                                Text(formatNumber(Double(coin.max_supply ?? 0)))
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 14))
+                                }
+                                else if coin.max_supply ?? 0 <= 0{
+                                    Text("∞")
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 14))
+                                }
+                                
+                            }
+                        }
+                        .padding(.top,5)
+                        .padding(.bottom,5)
+                        .padding(.horizontal)
                         
                     }
-                    Spacer()
-                    VStack{
-                        Text("Max Supply")
-                            .foregroundColor(.gray)
-                        if coin.max_supply ?? 0 > 0 {
-                        Text(formatNumber(Double(coin.max_supply ?? 0)))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                        }
-                        else if coin.max_supply ?? 0 <= 0{
-                            Text("∞")
+                    .background(Color("SecondColor"))
+                    .cornerRadius(5)
+                    .padding(.horizontal,10)
+                    
+                    //4 column
+                    HStack{
+                        HStack{
+                            Text("Circulating Supply")
+                                .foregroundColor(.gray)
+                            Spacer()
+                            Text(String(coin.circulating_supply ?? 0))
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
                                 .font(.system(size: 14))
                         }
+                        .padding(.top,5)
+                        .padding(.bottom,5)
+                        .padding(.horizontal)
                         
                     }
-                    
+                    .background(Color("SecondColor"))
+                    .cornerRadius(5)
+                    .padding(.horizontal,10)
+                  
                 }
-                .padding(.top,10)
-                .padding(.horizontal)
-
+                
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -450,7 +510,13 @@ struct CoinDetailView: View {
 }
 
 
-
+struct CoinDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        let coin = CoinDatum(id: "bitcoin", name: "Bitcoin", symbol: "BTC", image: "bitcoin", market_cap_rank: 50000, market_cap: 10, total_volume: 2000, high_24h: 1, low_24h: 1000000000, market_cap_change_percentage_24h: 5000000, total_supply: 55000, max_supply: 48000, price_change_24h: 21000000, circulating_supply: 123142, currentPrice: 12500,sparklineIn7D: SparklineIn7D(price: [1,2,3,4,5,6,7]), priceChangePercentage24H: 12)
+        
+        CoinDetailView(coin: coin)
+    }
+}
 
 
 

@@ -59,7 +59,7 @@ struct RegView: View {
                 }
                 .cornerRadius(20)
                 .padding(.vertical,30)
-                .padding(.horizontal,1)
+                .padding(.horizontal,15)
                 //TEXTFIEL PASSWORD
                 HStack{
                     Image(systemName: "lock.shield")
@@ -76,7 +76,7 @@ struct RegView: View {
                 }
                 .cornerRadius(20)
                 .padding(.vertical,30)
-                .padding(.horizontal,1)
+                .padding(.horizontal,15)
                 
                 
                 //TEXTFIEL PASSWORD
@@ -95,9 +95,9 @@ struct RegView: View {
                 }
                 .cornerRadius(20)
                 .padding(.vertical,30)
-                .padding(.horizontal,1)
+                .padding(.horizontal,15)
             }
-            .padding(.top,15)
+            .padding(.top,-15)
             
             ZStack{
 

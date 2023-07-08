@@ -65,13 +65,13 @@ struct TableView: View {
                                             }
                                             .frame(width: 40, height: 15)
                                             .background(Color("colorP"))
-                                            .cornerRadius(10)
+                                            .cornerRadius(2)
                                         } else {
                                             HStack {
                                             }
                                             .frame(width: 40, height: 15)
                                             .background(Color("colorM"))
-                                            .cornerRadius(10)
+                                            .cornerRadius(2)
                                         }
                                         ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
                                     }

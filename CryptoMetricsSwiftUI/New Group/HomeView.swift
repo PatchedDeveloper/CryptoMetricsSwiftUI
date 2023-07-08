@@ -13,70 +13,84 @@ struct HomeView: View {
     @State private var coinData: [CoinDatum] = [] // Assuming this array is populated with API data
     
     var body: some View {
+        //appbar
         VStack {
             HStack {
-                Text("Top Coins")
+               Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 40)
+                Text("Crypto Metrics")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
-                    .font(.system(size: 24))
+                    .font(.system(size: 15))
                 
                 Spacer()
+                Button {
+                    print("enter the subscription view")
+                } label: {
+                    Image("diamond")
+                         .resizable()
+                         .aspectRatio(contentMode: .fit)
+                         .frame(width: 30, height: 30)
+                }
+                .padding(.horizontal,5)
                 
                 Button {
-                    // Action for the button
+                    print("enter the subscription view")
                 } label: {
-                    Text("See All >")
-                        .foregroundColor(.white)
-                        .font(.system(size: 24))
+                   Text("USD")
+                        .foregroundColor(.gray)
                 }
+                .padding(.horizontal,5)
+                
+                Button {
+                    print("search")
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                }
+                .padding(.horizontal,5)
+
+                
+
             }
+            .underline()
+            .foregroundColor(.gray)
             .padding()
             
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(0..<min(coinData.count, 10)) { index in
-                        CoinCard(coin: coinData[index]) // Pass the coin data to the CoinCard view
+            ScrollView(showsIndicators: false){
+                HStack{
+                    Text("Top Coins")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                    Spacer()
+                    Button {
+                        //сделать переход на коин вью
+                    } label: {
+                        Text("See All>")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20))
                     }
-                    .padding()
-                }
-                .background(Color("SecondColor")) // Move the .background() modifier here
-                .padding()
-            }
-            .frame(maxWidth: .infinity, maxHeight: 150)
-            .padding(.horizontal)
 
-            Spacer()
+                }
+                .padding(.horizontal)
+            }
+            
+        Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
     }
 }
 
-struct CoinCard: View {
-    var coin: CoinDatum
-    
-    var body: some View {
-        VStack {
-            // Customize the appearance of the coin card as needed
-            Text(coin.name)
-                .foregroundColor(.white)
-                .font(.title)
-                .padding()
-            
-            // Display additional data for the coin, such as price, market cap, etc.
-            Text("Price: \(coin.currentPrice)")
-                .foregroundColor(.white)
-                .font(.subheadline)
-            
-            // Add more views to display other coin data
-            
-            Spacer()
-        }
-        .frame(width: 200, height: 150)
-        .background(Color.gray)
-        .cornerRadius(10)
-        .padding()
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
     }
 }
+
 
 

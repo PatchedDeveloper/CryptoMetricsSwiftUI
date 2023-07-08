@@ -56,3 +56,4 @@ func formatNumber(_ number: Double) -> String {
     
     return formattedNumber
 }
+
