@@ -38,6 +38,7 @@
 		1DDC813D2A59EB3300AEA3BB /* extensionsSrv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC813C2A59EB3300AEA3BB /* extensionsSrv.swift */; };
 		1DDC813F2A59EB9600AEA3BB /* +View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC813E2A59EB9600AEA3BB /* +View.swift */; };
 		1DDC81422A5A9CF800AEA3BB /* cardViewToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC81412A5A9CF800AEA3BB /* cardViewToken.swift */; };
+		1DDC81452A5ACCA700AEA3BB /* aboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC81442A5ACCA700AEA3BB /* aboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		1DDC813E2A59EB9600AEA3BB /* +View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+View.swift"; sourceTree = "<group>"; };
 		1DDC81402A59EBF300AEA3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1DDC81412A5A9CF800AEA3BB /* cardViewToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardViewToken.swift; sourceTree = "<group>"; };
+		1DDC81442A5ACCA700AEA3BB /* aboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				1D7FD5012A44EC4C00293F10 /* OtherView.swift */,
 				1D351A802A46AF2B005832E3 /* CoinDetailView.swift */,
 				1DDC81292A59E98500AEA3BB /* GoogleService-Info.plist */,
+				1DDC81442A5ACCA700AEA3BB /* aboutView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				1D7FD5022A44EC4C00293F10 /* OtherView.swift in Sources */,
 				1DDC81422A5A9CF800AEA3BB /* cardViewToken.swift in Sources */,
 				1D0E36072A47923100CB80FE /* AuthorizationView.swift in Sources */,
+				1DDC81452A5ACCA700AEA3BB /* aboutView.swift in Sources */,
 				1DDC813F2A59EB9600AEA3BB /* +View.swift in Sources */,
 				1D351A892A46CD13005832E3 /* GraphAPIManager.swift in Sources */,
 				1D351A7F2A465A48005832E3 /* ProcentView.swift in Sources */,

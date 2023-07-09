@@ -13,6 +13,7 @@ struct OtherView: View {
     @State private var isLinkActiveDiscord = false
     @State private var isLinkActiveTelegram = false
     @State private var isLinkActiveTwitter = false
+    @State private var isAbout = false
     var body: some View {
         VStack{
             HStack{
@@ -244,7 +245,7 @@ struct OtherView: View {
             VStack{
                 //language
                 Button {
-                    print("open Converter")
+                    isAbout.toggle()
                 } label: {
                     HStack{
                         Image(systemName: "info.circle")
@@ -258,6 +259,10 @@ struct OtherView: View {
                             .foregroundColor(.white)
                     }
                 }
+                .sheet(isPresented: $isAbout) {
+                    aboutView()
+                           }
+                
                 .padding()
             }
             .frame(maxWidth: .infinity)

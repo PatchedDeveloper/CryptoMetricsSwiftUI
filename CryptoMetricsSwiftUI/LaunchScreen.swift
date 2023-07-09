@@ -17,19 +17,22 @@ struct LaunchScreenView: View {
             Image("logoBlure")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 206, height: 190)
+                .frame(width: 180, height: 180)
                 .opacity(isLogoVisible ? 1 : 0)
                 .offset(y: yOffset)
+            
             
             Image("logo")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 190, height: 190)
+                .frame(width: 150, height: 150)
                 .offset(y: yOffset)
+          
         }
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
+        
         .onAppear {
             let screenHeight = UIScreen.main.bounds.height
             let screenWidth = UIScreen.main.bounds.width

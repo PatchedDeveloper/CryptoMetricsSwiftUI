@@ -74,7 +74,7 @@ struct HomeView: View {
                         Text("See All>")
                             .foregroundColor(Color("BtnSignUp"))
                             .fontWeight(.medium)
-                            .font(.system(size: 20))
+                            .font(.system(size: 14))
                     }
                  
 
@@ -104,7 +104,7 @@ struct HomeView: View {
                         Text("See All>")
                             .foregroundColor(Color("BtnSignUp"))
                             .fontWeight(.medium)
-                            .font(.system(size: 20))
+                            .font(.system(size: 14))
                     }
 
                 }
