@@ -15,21 +15,25 @@ struct TabBarView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
+                .tag(0)
             TokenView()
                 .tabItem {
                     Image(systemName: "bitcoinsign.circle")
                     Text("Tokens")
                 }
+                .tag(1)
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Profile")
                 }
+                .tag(2)
             OtherView()
                 .tabItem {
                     Image(systemName: "ellipsis")
                     Text("Other")
                 }
+                .tag(3)
         }
         .accentColor(.white)
         .onAppear {

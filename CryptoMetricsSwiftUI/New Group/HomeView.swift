@@ -10,7 +10,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var coinData: [CoinDatum] = [] // Assuming this array is populated with API data
+    @State private var coinData: [CoinDatum] = []
+    @State private var isCoinView = false
+    
     
     var body: some View {
         //appbar
@@ -67,23 +69,70 @@ struct HomeView: View {
                         .font(.system(size: 20))
                     Spacer()
                     Button {
+                      //Переход на коин вью
+                    } label: {
+                        Text("See All>")
+                            .foregroundColor(Color("BtnSignUp"))
+                            .fontWeight(.medium)
+                            .font(.system(size: 20))
+                    }
+                 
+
+                }
+                .padding(.horizontal)
+                
+                //MARK: TOP COINS
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(coinData.sorted(by: { $0.market_cap_rank < $1.market_cap_rank }).prefix(10)) { coin in
+                            CoinCardView(coin: coin)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                
+                
+                HStack{
+                    Text("Top Exchanges")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                    Spacer()
+                    Button {
                         //сделать переход на коин вью
                     } label: {
                         Text("See All>")
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
+                            .foregroundColor(Color("BtnSignUp"))
+                            .fontWeight(.medium)
                             .font(.system(size: 20))
                     }
 
                 }
                 .padding(.horizontal)
+                .padding(.top,15)
+
+
             }
             
         Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
+        .onAppear {
+                fetchData() // load data
+            }
+        
     }
+    
+    func fetchData() {
+        APIManager.shared.getData { coinData in
+            DispatchQueue.main.async {
+                self.coinData = coinData
+                print("Fetched data from API")
+            }
+        }
+    }
+
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -91,6 +140,5 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-
 
 

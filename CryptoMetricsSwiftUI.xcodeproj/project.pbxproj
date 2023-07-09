@@ -37,6 +37,7 @@
 		1DDC813A2A59EAC400AEA3BB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC81392A59EAC400AEA3BB /* AuthService.swift */; };
 		1DDC813D2A59EB3300AEA3BB /* extensionsSrv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC813C2A59EB3300AEA3BB /* extensionsSrv.swift */; };
 		1DDC813F2A59EB9600AEA3BB /* +View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC813E2A59EB9600AEA3BB /* +View.swift */; };
+		1DDC81422A5A9CF800AEA3BB /* cardViewToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC81412A5A9CF800AEA3BB /* cardViewToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		1DDC813C2A59EB3300AEA3BB /* extensionsSrv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsSrv.swift; sourceTree = "<group>"; };
 		1DDC813E2A59EB9600AEA3BB /* +View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+View.swift"; sourceTree = "<group>"; };
 		1DDC81402A59EBF300AEA3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1DDC81412A5A9CF800AEA3BB /* cardViewToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardViewToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +115,11 @@
 		1D27FD322A44C871006C9359 /* CryptoMetricsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1D27FD392A44C874006C9359 /* Preview Content */,
 				1D27FD372A44C874006C9359 /* Assets.xcassets */,
 				1DDC81402A59EBF300AEA3BB /* Info.plist */,
 				1D27FD332A44C871006C9359 /* CryptoMetricsSwiftUIApp.swift */,
 				1D27FD432A44D1AF006C9359 /* LaunchScreen.swift */,
-				1D27FD392A44C874006C9359 /* Preview Content */,
 				1DCFEA472A458FBD0044CAD4 /* ApiControllers */,
 				1D7FD5062A44F17000293F10 /* Service */,
 				1D7FD4F92A44DE3400293F10 /* Screens */,
@@ -175,6 +177,7 @@
 				1DA3F8362A4723D6006997B8 /* Formatters.swift */,
 				1D0E36092A4860E600CB80FE /* WebView.swift */,
 				1DDC813B2A59EAC800AEA3BB /* Reg.Auth.Service */,
+				1DDC81432A5A9D0000AEA3BB /* cardView */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -195,6 +198,14 @@
 				1DDC813E2A59EB9600AEA3BB /* +View.swift */,
 			);
 			path = Reg.Auth.Service;
+			sourceTree = "<group>";
+		};
+		1DDC81432A5A9D0000AEA3BB /* cardView */ = {
+			isa = PBXGroup;
+			children = (
+				1DDC81412A5A9CF800AEA3BB /* cardViewToken.swift */,
+			);
+			path = cardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				1DDC813A2A59EAC400AEA3BB /* AuthService.swift in Sources */,
 				1D27FD342A44C871006C9359 /* CryptoMetricsSwiftUIApp.swift in Sources */,
 				1D7FD5022A44EC4C00293F10 /* OtherView.swift in Sources */,
+				1DDC81422A5A9CF800AEA3BB /* cardViewToken.swift in Sources */,
 				1D0E36072A47923100CB80FE /* AuthorizationView.swift in Sources */,
 				1DDC813F2A59EB9600AEA3BB /* +View.swift in Sources */,
 				1D351A892A46CD13005832E3 /* GraphAPIManager.swift in Sources */,

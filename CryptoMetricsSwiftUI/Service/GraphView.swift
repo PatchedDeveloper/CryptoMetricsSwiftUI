@@ -43,12 +43,12 @@ struct GraphView: View {
                           CurveChart(data: data, isBackground: true)
                             .fill(.linearGradient(colors: [Color(ColorGraph).opacity(0.4), .clear], startPoint: .top, endPoint: .bottom)) // background fill
                           )
-                      .frame(width: 374,height: 186)
+//                      .frame(width: 374,height: 186)
                       
 
 
         }
-        .frame(width: 374,height: 186)
+//        .frame(width: 374,height: 186)
     }
 }
 
