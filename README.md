@@ -38,4 +38,8 @@ CryptoMetrics is a useful tool for cryptocurrency investors, traders, and anyone
 
 - To see the complete documentation and download the repository, please visit the [CryptoMetrics GitHub repository](https://github.com/PatchedDeveloper/CryptoMetrics).
 
+# Partners
+![Frame 86](https://github.com/PatchedDeveloper/CryptoMetricsSwiftUI/assets/103842703/1495280e-df5d-41b9-995b-658e248bfd41)
+
+
 
