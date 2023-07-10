@@ -115,6 +115,44 @@ struct aboutView: View {
             .cornerRadius(10)
             .padding(.horizontal, 10)
             
+            Text("Partners")
+                .foregroundColor(.gray)
+                .fontWeight(.medium)
+                .font(.system(size: 15))
+                .padding(.top, 5)
+            
+            ScrollView(.horizontal,showsIndicators: false){
+                HStack(spacing: 10)
+                {
+                    HStack{
+                        Image("coingecko")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text("CoinGecko")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 15))
+                    }
+                    HStack{
+                        Image("coinstats")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text("CoinStats")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 15))
+                    }
+                    HStack{
+                        Image("NeverSync")
+                            .resizable()
+                            .frame(width: 43, height: 30)
+                        Text("NeverSync")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 15))
+                    }
+                    
+                }
+                
+            }
+            .padding()
             Spacer()
 
         }

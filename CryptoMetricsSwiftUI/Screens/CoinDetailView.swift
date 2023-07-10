@@ -130,176 +130,176 @@ struct CoinDetailView: View {
                 }
                 .padding(.horizontal)
                 
-                HStack{
-                    Button {
-                        isSelected = true
-                        isSelected2 = false
-                        isSelected3 = false
-                        isSelected4 = false
-                        isSelected5 = false
-                        isSelected6 = false
-                        isSelected7 = false
-                        graphdays = 1
-                        fetchChartData()
-                    } label: {
-                        Text("1d")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 44,height: 26)
-                    .background(isSelected ? Color("toggle") : Color("SecondColor"))
-                    .cornerRadius(20)
-                    Button {
-                        isSelected = false
-                        isSelected2 = true
-                        isSelected3 = false
-                        isSelected4 = false
-                        isSelected5 = false
-                        isSelected6 = false
-                        isSelected7 = false
-                        graphdays = 3
-                        fetchChartData()
-                    } label: {
-                        Text("3d")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 44,height: 26)
-                    .background(isSelected2 ? Color("toggle") : Color("SecondColor"))
-                    .cornerRadius(20)
-                    Button {
-                        isSelected = false
-                        isSelected2 = false
-                        isSelected3 = true
-                        isSelected4 = false
-                        isSelected5 = false
-                        isSelected6 = false
-                        isSelected7 = false
-                        graphdays = 7
-                        fetchChartData()
-                    } label: {
-                        Text("1w")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 44,height: 26)
-                    .background(isSelected3 ? Color("toggle") : Color("SecondColor"))
-                    .cornerRadius(20)
-                    Button {
-                        isSelected = false
-                        isSelected2 = false
-                        isSelected3 = false
-                        isSelected4 = true
-                        isSelected5 = false
-                        isSelected6 = false
-                        isSelected7 = false
-                        graphdays = 30
-                        fetchChartData()
-                    } label: {
-                        Text("1m")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 44,height: 26)
-                    .background(isSelected4 ? Color("toggle") : Color("SecondColor"))
-                    .cornerRadius(20)
-                    Button {
-                        isSelected = false
-                        isSelected2 = false
-                        isSelected3 = false
-                        isSelected4 = false
-                        isSelected5 = true
-                        isSelected6 = false
-                        isSelected7 = false
-                        graphdays = 90
-                        fetchChartData()
-                    } label: {
-                        Text("3m")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 44,height: 26)
-                    .background(isSelected5 ? Color("toggle") : Color("SecondColor"))
-                    .cornerRadius(20)
-                    Button {
-                        isSelected = false
-                        isSelected2 = false
-                        isSelected3 = false
-                        isSelected4 = false
-                        isSelected5 = false
-                        isSelected6 = true
-                        isSelected7 = false
-                        graphdays = 180
-                        fetchChartData()
-                    } label: {
-                        Text("6m")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 44,height: 26)
-                    .background(isSelected6 ? Color("toggle") : Color("SecondColor"))
-                    .cornerRadius(20)
-                    Button {
-                        isSelected = false
-                        isSelected2 = false
-                        isSelected3 = false
-                        isSelected4 = false
-                        isSelected5 = false
-                        isSelected6 = false
-                        isSelected7 = true
-                        graphdays = 365
-                        fetchChartData()
-                    } label: {
-                        Text("1y")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: 44,height: 26)
-                    .background(isSelected7 ? Color("toggle") : Color("SecondColor"))
-                    .cornerRadius(20)
+                ScrollView(){
+                    HStack{
+                        Button {
+                            isSelected = true
+                            isSelected2 = false
+                            isSelected3 = false
+                            isSelected4 = false
+                            isSelected5 = false
+                            isSelected6 = false
+                            isSelected7 = false
+                            graphdays = 1
+                            fetchChartData()
+                        } label: {
+                            Text("1d")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 44,height: 26)
+                        .background(isSelected ? Color("toggle") : Color("SecondColor"))
+                        .cornerRadius(20)
+                        Button {
+                            isSelected = false
+                            isSelected2 = true
+                            isSelected3 = false
+                            isSelected4 = false
+                            isSelected5 = false
+                            isSelected6 = false
+                            isSelected7 = false
+                            graphdays = 3
+                            fetchChartData()
+                        } label: {
+                            Text("3d")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 44,height: 26)
+                        .background(isSelected2 ? Color("toggle") : Color("SecondColor"))
+                        .cornerRadius(20)
+                        Button {
+                            isSelected = false
+                            isSelected2 = false
+                            isSelected3 = true
+                            isSelected4 = false
+                            isSelected5 = false
+                            isSelected6 = false
+                            isSelected7 = false
+                            graphdays = 7
+                            fetchChartData()
+                        } label: {
+                            Text("1w")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 44,height: 26)
+                        .background(isSelected3 ? Color("toggle") : Color("SecondColor"))
+                        .cornerRadius(20)
+                        Button {
+                            isSelected = false
+                            isSelected2 = false
+                            isSelected3 = false
+                            isSelected4 = true
+                            isSelected5 = false
+                            isSelected6 = false
+                            isSelected7 = false
+                            graphdays = 30
+                            fetchChartData()
+                        } label: {
+                            Text("1m")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 44,height: 26)
+                        .background(isSelected4 ? Color("toggle") : Color("SecondColor"))
+                        .cornerRadius(20)
+                        Button {
+                            isSelected = false
+                            isSelected2 = false
+                            isSelected3 = false
+                            isSelected4 = false
+                            isSelected5 = true
+                            isSelected6 = false
+                            isSelected7 = false
+                            graphdays = 90
+                            fetchChartData()
+                        } label: {
+                            Text("3m")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 44,height: 26)
+                        .background(isSelected5 ? Color("toggle") : Color("SecondColor"))
+                        .cornerRadius(20)
+                        Button {
+                            isSelected = false
+                            isSelected2 = false
+                            isSelected3 = false
+                            isSelected4 = false
+                            isSelected5 = false
+                            isSelected6 = true
+                            isSelected7 = false
+                            graphdays = 180
+                            fetchChartData()
+                        } label: {
+                            Text("6m")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 44,height: 26)
+                        .background(isSelected6 ? Color("toggle") : Color("SecondColor"))
+                        .cornerRadius(20)
+                        Button {
+                            isSelected = false
+                            isSelected2 = false
+                            isSelected3 = false
+                            isSelected4 = false
+                            isSelected5 = false
+                            isSelected6 = false
+                            isSelected7 = true
+                            graphdays = 365
+                            fetchChartData()
+                        } label: {
+                            Text("1y")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 44,height: 26)
+                        .background(isSelected7 ? Color("toggle") : Color("SecondColor"))
+                        .cornerRadius(20)
 
-                }
-                GraphView(price: graphData) // Pass the graph data to GraphView
-                    .padding(.horizontal)
-                    .cornerRadius(20)
+                    }
+                    GraphView(price: graphData)
+                        .frame(height: 180)// Pass the graph data to GraphView
+                        .padding(.horizontal)
+                        .cornerRadius(20)
+                        .padding(.top,10)
+                    
+                    HStack{
+                        VStack{
+                            Text("Rank")
+                            .foregroundColor(.gray)
+                            
+                            Text(String(coin.market_cap_rank))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                        }
+                        Spacer()
+                        VStack{
+                            Text("Market Capitalization")
+                            .foregroundColor(.gray)
+                            
+                            Text("$"+formatNumber(Double(coin.market_cap)))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                        }
+                        Spacer()
+                        VStack{
+                            Text("Volume")
+                            .foregroundColor(.gray)
+                            
+                            Text("$"+formatNumber(Double(coin.total_volume ?? 0)))
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .font(.system(size: 14))
+                        }
+                    }
                     .padding(.top,10)
-                
-                HStack{
-                    VStack{
-                        Text("Rank")
-                        .foregroundColor(.gray)
-                        
-                        Text(String(coin.market_cap_rank))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                    }
-                    Spacer()
-                    VStack{
-                        Text("Market Capitalization")
-                        .foregroundColor(.gray)
-                        
-                        Text("$"+formatNumber(Double(coin.market_cap)))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                    }
-                    Spacer()
-                    VStack{
-                        Text("Volume")
-                        .foregroundColor(.gray)
-                        
-                        Text("$"+formatNumber(Double(coin.total_volume ?? 0)))
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 14))
-                    }
-                }
-                .padding(.top,10)
-                .padding(.horizontal)
-                
-                Text("Additional Details")
-                    .foregroundColor(.white)
-                    .font(.system(size: 20, weight: .bold))
-                    .padding(.top, 10)
-                
-                
-                
-                
-                ScrollView(showsIndicators: false){
+                    .padding(.horizontal)
+                    
+                    Text("Additional Details")
+                        .foregroundColor(.white)
+                        .font(.system(size: 20, weight: .bold))
+                        .padding(.top, 10)
+                    
+                    
+                    
                     
                     HStack{
                         // 1 colimn
@@ -468,10 +468,28 @@ struct CoinDetailView: View {
                     .background(Color("SecondColor"))
                     .cornerRadius(5)
                     .padding(.horizontal,10)
-                  
+                    
+                    
+                    VStack{
+                        Image("line")
+                              .resizable()
+                              .padding(.horizontal)
+                              .padding(.top,15)
+                        HStack{
+                            Text("Analysis")
+                                .foregroundColor(.white)
+                          Image(systemName: "info.circle")
+                                .foregroundColor(.gray)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                    }
+                        
                 }
                 
-                Spacer()
+            
+                
+              Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("background")) // Set the desired background color here

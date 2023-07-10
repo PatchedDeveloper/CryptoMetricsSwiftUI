@@ -10,8 +10,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var coinData: [CoinDatum] = []
+    @State private var coinData: [Coin] = []
     @State private var isCoinView = false
+    @ObservedObject var apiManagerCoinStats = APIManagerCoinStats.shared
     
     
     var body: some View {
@@ -63,7 +64,7 @@ struct HomeView: View {
             
             ScrollView(showsIndicators: false){
                 HStack{
-                    Text("Top Coins")
+                    Text("Top 10 Coins")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .font(.system(size: 20))
@@ -84,12 +85,13 @@ struct HomeView: View {
                 //MARK: TOP COINS
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
-                        ForEach(coinData.sorted(by: { $0.market_cap_rank < $1.market_cap_rank }).prefix(10)) { coin in
+                        ForEach(apiManagerCoinStats.coinData.coins) { coin in
                             CoinCardView(coin: coin)
                         }
                     }
                     .padding(.horizontal)
                 }
+
                 
                 
                 HStack{
@@ -106,12 +108,18 @@ struct HomeView: View {
                             .fontWeight(.medium)
                             .font(.system(size: 14))
                     }
+                    
 
                 }
                 .padding(.horizontal)
                 .padding(.top,15)
 
-
+              
+                Image("line")
+                      .resizable()
+                      .padding(.horizontal)
+                      .padding(.top,15)
+                
             }
             
         Spacer()
@@ -119,19 +127,11 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
         .onAppear {
-                fetchData() // load data
+            apiManagerCoinStats.fetchData()
             }
         
     }
     
-    func fetchData() {
-        APIManager.shared.getData { coinData in
-            DispatchQueue.main.async {
-                self.coinData = coinData
-                print("Fetched data from API")
-            }
-        }
-    }
 
 }
 
