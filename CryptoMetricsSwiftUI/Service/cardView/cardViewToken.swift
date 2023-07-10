@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct CoinCardView: View {
-    @State private var graphData: [[TimeInterval: Double]] = []
-    @State private var graphdays = 1
     let coin: CoinDatum
     var body: some View {
         VStack{
@@ -36,11 +34,20 @@ struct CoinCardView: View {
             Spacer()
             HStack{
                 VStack{
-                    ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
-                    Text("$"+formatNumber(Double(coin.currentPrice)))
-                        .foregroundColor(.white)
-                }
+                    HStack{
+                        ProcentPrice(procent: coin.priceChangePercentage24H ?? 0)
+                            .padding(.trailing,65)
+                        Spacer()
+                    }
                 
+                    HStack{
+                        Text("$"+formatNumber(Double(coin.currentPrice)))
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+ 
+                }
+    
             }
             .padding(.horizontal)
             .padding(.top,-15)
@@ -49,20 +56,30 @@ struct CoinCardView: View {
         .frame(width: 150,height: 85)
         .background(Color("SecondColor"))
         .cornerRadius(10)
-        .onAppear {
-            fetchChartData()
-        }
-    }
     
-    func fetchChartData() {
-        GraphAPIManager.shared.getBitcoinChartData(nametoken: coin.id,days: String(graphdays)) { result in
-            switch result {
-            case .success(let chartData):
-                let convertedData = chartData.prices.map { [$0[0]: $0[1]] }
-                graphData = convertedData
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
-        }
+    }
+}
+
+struct CoinCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        CoinCardView(coin: CoinDatum(
+            id: "bitcoin",
+            name: "Bitcoin",
+            symbol: "BTC",
+            image: "bitcoin_image_url",
+            market_cap_rank: 1,
+            market_cap: 1000000000,
+            total_volume: 5000000,
+            high_24h: 60000,
+            low_24h: 40000,
+            market_cap_change_percentage_24h: 2.5,
+            total_supply: 21000000,
+            max_supply: 21000000,
+            price_change_24h: 2000,
+            circulating_supply: 18000000,
+            currentPrice: 50000,
+            sparklineIn7D: SparklineIn7D(price: [1,2,3,4]),
+            priceChangePercentage24H: 5))
+            .previewLayout(.fixed(width: 200, height: 120)) // Задайте нужные размеры превью
     }
 }
