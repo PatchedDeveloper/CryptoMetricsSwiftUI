@@ -13,9 +13,10 @@ struct HomeView: View {
     @State private var coinData: [Coin] = []
     @State private var isCoinView = false
     @ObservedObject var apiManagerCoinStats = APIManagerCoinStats.shared
-    @State var apiManagereExchanges = APIManagerExchanges.shared
+    @StateObject var apiManagerCoinStatsNews = APIManagerCoinStatsNews.shared
     
     @State private var exchData: [ModelExchElement] = []
+    @State private var newsData: [NewsModel] = []
     
     
     var body: some View {
@@ -98,7 +99,7 @@ struct HomeView: View {
                 
                 
                 HStack{
-                    Text("Top Exchanges")
+                    Text("Top 10 Exchanges")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .font(.system(size: 20))
@@ -133,6 +134,34 @@ struct HomeView: View {
                       .padding(.horizontal)
                       .padding(.top,15)
                 
+                //MARK: Crypto News
+                HStack{
+                    Text("Crypto News")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                    Spacer()
+                    Button {
+                        //сделать переход на коин вью
+                    } label: {
+                        Text("See All>")
+                            .foregroundColor(Color("BtnSignUp"))
+                            .fontWeight(.medium)
+                            .font(.system(size: 14))
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.top,15)
+                
+                ScrollView {
+                    VStack(spacing: 10) {
+                        ForEach(apiManagerCoinStatsNews.NewsData.news) { news in
+                          cardViewNews(news: news)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+        
             }
             
         Spacer()
@@ -140,20 +169,23 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
         .onAppear {
-            apiManagerCoinStats.fetchData()
-            fetchDataExch()
+            apiManagerCoinStats.fetchData()// fetch for top coin
+            fetchDataExch()// fetch for top exchange
+            APIManagerCoinStatsNews.shared.fetchData()// fetch for news
             }
         
     }
     
+    //fetch data exch
     func fetchDataExch() {
         APIManagerExchanges.shared.getData { exchData in
             DispatchQueue.main.async {
                 self.exchData = exchData
-                print("Fetched data from API")
+                print("Fetched data from Exchange")
             }
         }
     }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
