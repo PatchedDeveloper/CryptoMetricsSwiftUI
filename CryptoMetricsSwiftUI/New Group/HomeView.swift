@@ -13,6 +13,9 @@ struct HomeView: View {
     @State private var coinData: [Coin] = []
     @State private var isCoinView = false
     @ObservedObject var apiManagerCoinStats = APIManagerCoinStats.shared
+    @State var apiManagereExchanges = APIManagerExchanges.shared
+    
+    @State private var exchData: [ModelExchElement] = []
     
     
     var body: some View {
@@ -114,7 +117,17 @@ struct HomeView: View {
                 .padding(.horizontal)
                 .padding(.top,15)
 
-              
+                //MARK: TOP Exchanges
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(exchData) { exchange in
+                            cardViewExch(exch: exchange)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+
+                
                 Image("line")
                       .resizable()
                       .padding(.horizontal)
@@ -128,11 +141,19 @@ struct HomeView: View {
         .background(Color("background"))
         .onAppear {
             apiManagerCoinStats.fetchData()
+            fetchDataExch()
             }
         
     }
     
-
+    func fetchDataExch() {
+        APIManagerExchanges.shared.getData { exchData in
+            DispatchQueue.main.async {
+                self.exchData = exchData
+                print("Fetched data from API")
+            }
+        }
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
