@@ -1,4 +1,4 @@
-**Version 0.1.0**
+**Version 0.1.0 - This application is no longer supported!**
 
 # CryptoMetrics by PatchedDev
 
