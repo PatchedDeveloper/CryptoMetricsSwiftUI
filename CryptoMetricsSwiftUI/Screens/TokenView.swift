@@ -21,8 +21,10 @@ struct TokenView: View {
 
             //window search
             SearchView()
+                .padding(.horizontal,5)
             // ListView with cells
             TableView()
+                .padding(.horizontal,5)
             Spacer()
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)

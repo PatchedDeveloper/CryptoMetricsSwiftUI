@@ -11,8 +11,28 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         VStack {
-            Text("THIS SCREEN PROFILE")
-                .foregroundColor(.white)
+            
+            //Profile info
+            HStack(spacing: 16){
+                Image("user")
+                    .resizable()
+                    .frame(width: 80,height: 80)
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading, spacing: 12){
+                    Text("USER NAME")
+                        .foregroundColor(.white)
+                        .bold()
+                    
+                    Text("Xetokky@gmail.com")
+                        .foregroundColor(.white)
+                }
+                
+            }
+            
+            
+            
+     
         }
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
