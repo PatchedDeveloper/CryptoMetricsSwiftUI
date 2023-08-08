@@ -32,6 +32,8 @@
 		1D84165B2A5D62D500E92552 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84165A2A5D62D500E92552 /* NewsModel.swift */; };
 		1D84165D2A5D65D200E92552 /* cardViewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84165C2A5D65D200E92552 /* cardViewNews.swift */; };
 		1DA3F8372A4723D6006997B8 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3F8362A4723D6006997B8 /* Formatters.swift */; };
+		1DC6061D2A82685700B8A1D7 /* MWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6061C2A82685700B8A1D7 /* MWUser.swift */; };
+		1DC606202A82694400B8A1D7 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6061F2A82694400B8A1D7 /* DataBaseService.swift */; };
 		1DCFEA422A458D6C0044CAD4 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFEA412A458D6C0044CAD4 /* TableView.swift */; };
 		1DCFEA442A458F900044CAD4 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFEA432A458F900044CAD4 /* GraphView.swift */; };
 		1DCFEA462A458FB70044CAD4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFEA452A458FB70044CAD4 /* APIManager.swift */; };
@@ -77,6 +79,8 @@
 		1D84165A2A5D62D500E92552 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		1D84165C2A5D65D200E92552 /* cardViewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardViewNews.swift; sourceTree = "<group>"; };
 		1DA3F8362A4723D6006997B8 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		1DC6061C2A82685700B8A1D7 /* MWUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWUser.swift; sourceTree = "<group>"; };
+		1DC6061F2A82694400B8A1D7 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		1DCFEA412A458D6C0044CAD4 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		1DCFEA432A458F900044CAD4 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		1DCFEA452A458FB70044CAD4 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				1D351A7E2A465A48005832E3 /* ProcentView.swift */,
 				1DA3F8362A4723D6006997B8 /* Formatters.swift */,
 				1D0E36092A4860E600CB80FE /* WebView.swift */,
+				1DC606212A82694B00B8A1D7 /* DataBase */,
 				1DDC813B2A59EAC800AEA3BB /* Reg.Auth.Service */,
 				1DDC81432A5A9D0000AEA3BB /* cardView */,
 			);
@@ -248,6 +253,23 @@
 				1D84165A2A5D62D500E92552 /* NewsModel.swift */,
 			);
 			path = NewsManager;
+			sourceTree = "<group>";
+		};
+		1DC6061E2A82685F00B8A1D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DC6061C2A82685700B8A1D7 /* MWUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DC606212A82694B00B8A1D7 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				1DC6061F2A82694400B8A1D7 /* DataBaseService.swift */,
+				1DC6061E2A82685F00B8A1D7 /* Model */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		1DCFEA472A458FBD0044CAD4 /* ApiControllers */ = {
@@ -363,8 +385,10 @@
 			files = (
 				1D27FD362A44C871006C9359 /* HomeView.swift in Sources */,
 				1DDC813D2A59EB3300AEA3BB /* extensionsSrv.swift in Sources */,
+				1DC606202A82694400B8A1D7 /* DataBaseService.swift in Sources */,
 				1D7FD4FE2A44E1B900293F10 /* TokenView.swift in Sources */,
 				1DA3F8372A4723D6006997B8 /* Formatters.swift in Sources */,
+				1DC6061D2A82685700B8A1D7 /* MWUser.swift in Sources */,
 				1DCFEA462A458FB70044CAD4 /* APIManager.swift in Sources */,
 				1D8416582A5D62B200E92552 /* NewsCSManager.swift in Sources */,
 				1DCFEA442A458F900044CAD4 /* GraphView.swift in Sources */,

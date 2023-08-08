@@ -35,7 +35,7 @@ struct CoinCardView: View {
             HStack{
                 VStack{
                     HStack{
-                        ProcentPrice(procent: coin.priceChange1D ?? 0)
+                        ProcentPrice(procent: coin.priceChange1D )
                             .padding(.trailing,65)
                         Spacer()
                     }

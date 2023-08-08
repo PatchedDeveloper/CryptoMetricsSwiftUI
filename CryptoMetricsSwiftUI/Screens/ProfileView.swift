@@ -9,6 +9,9 @@ import SwiftUI
 
 
 struct ProfileView: View {
+    
+    @State var isAvatarAlertPresented = false
+    
     var body: some View {
         VStack {
             
@@ -18,6 +21,24 @@ struct ProfileView: View {
                     .resizable()
                     .frame(width: 80,height: 80)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        isAvatarAlertPresented.toggle()
+                    }
+                    .confirmationDialog("What to use?", isPresented: $isAvatarAlertPresented) {
+                        
+                        Button {
+                            print("Library")
+                        } label: {
+                            Text("Library")
+                        }
+
+                        
+                        Button {
+                            print("Camera")
+                        } label: {
+                            Text("Camera")
+                        }
+                    }
                 
                 VStack(alignment: .leading, spacing: 12){
                     Text("USER NAME")
@@ -29,12 +50,25 @@ struct ProfileView: View {
                 }
                 
             }
+            .padding(.top,10)
             
-            
+            Spacer()
+             
+            Button {
+                print("exit")
+            } label: {
+                Text("Exit")
+                    .padding()
+                    .foregroundColor(.white)
+                    .padding(.horizontal,60)
+                    .background(.red)
+                    .cornerRadius(30)
+            }.padding()
+
+
             
      
         }
-        .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
      
