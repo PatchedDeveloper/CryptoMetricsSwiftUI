@@ -4,6 +4,7 @@
 //
 //  Created by Danila Kardashevkii on 12.07.2023.
 //
+//10 aug bk
 
 import SwiftUI
 
