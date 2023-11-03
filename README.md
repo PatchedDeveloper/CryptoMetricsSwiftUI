@@ -2,7 +2,7 @@
 
 # CryptoMetrics [is no longer supported by its developers].
 
-The app's status is `Pre-Alpha`
+The app's status is `no supported`
 
 **CryptoMetrics** is an application designed for tracking and monitoring cryptocurrencies and their market data. It provides users with real-time information about various cryptocurrencies, including their current price, market capitalization, trading volume, and price changes over a specific period of time.
 
