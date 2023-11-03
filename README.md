@@ -1,6 +1,6 @@
 **Version 0.1.0**
 
-# CryptoMetrics by PatchedDev
+# CryptoMetrics [is no longer supported by its developers].
 
 The app's status is `Pre-Alpha`
 
