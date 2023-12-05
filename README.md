@@ -1,6 +1,6 @@
 **Version 0.1.0**
 
-# CryptoMetrics [Newly supported by developers]..
+# CryptoMetrics .
 
 The app's status is `no supported`
 
